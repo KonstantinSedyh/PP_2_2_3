@@ -9,18 +9,11 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-//    public UserDaoImpl() {
-//    }
-//
-//    @Autowired
-//    public UserDaoImpl(EntityManager entityManager) {
-//        this.entityManager = entityManager;
-//    }
 
     @Override
     public List<User> getAllUsers() {
@@ -42,19 +35,13 @@ public class UserDaoImpl implements UserDao{
         updatedUser.setEmail(user.getEmail());
     }
 
-//    @Override
-//    public void updateUser(User user) {
-//        entityManager.merge(user);
-//    }
-
     @Override
-    public void deleteUser(int id){
-//        User user1 = entityManager.find(User.class, id);
+    public void deleteUser(int id) {
         entityManager.remove(entityManager.find(User.class, id));
     }
 
     @Override
-    public User findById(int id){
+    public User findById(int id) {
         return entityManager.find(User.class, id);
     }
 

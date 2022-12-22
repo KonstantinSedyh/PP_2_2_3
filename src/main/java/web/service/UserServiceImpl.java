@@ -15,12 +15,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-//    UserDao userDao = new UserDaoImpl();
-//      @Autowired
-//    public UserServiceImpl(UserDao userDao) {
-//        this.userDao = userDao;
-//    }
-
     @Override
     @Transactional
     public List<User> getAllUsers() {
@@ -44,11 +38,6 @@ public class UserServiceImpl implements UserService {
     public void updateUser(int id, User user) {
         userDao.updateUser(id, user);
     }
-//    @Override
-//    @Transactional
-//    public void updateUser(int id, User user) {
-//        userDao.updateUser(id, user);
-//    }
 
     @Override
     @Transactional
